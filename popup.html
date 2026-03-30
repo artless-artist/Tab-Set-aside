@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搁置标签页</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header-actions">
+      <button id="stashWorkspaceBtn" class="btn btn-primary">搁置当前窗口的所有标签页</button>
+      <div class="header-spacer"></div>
+      <button id="clearAllBtn" class="btn btn-clear" title="删除所有暂存的标签页">🗑️</button>
+      <button id="settingsBtn" class="btn btn-settings">⚙️</button>
+    </div>
+    
+    <div id="empty-state" class="empty-state" style="display: none;">
+      <p>暂无搁置的标签页</p>
+      <p style="font-size: 11px; margin-top: 8px;">点击地址栏图标搁置当前标签页</p>
+    </div>
+    
+    <div class="items-list" id="items-list"></div>
+    
+    <div class="settings-section" id="settings-content" style="display: none;">
+      <div class="setting-item">
+        <span class="setting-label">深色模式</span>
+        <div class="setting-toggle" id="themeToggle"></div>
+      </div>
+      <div class="setting-item">
+        <span class="setting-label">搁置后关闭标签页</span>
+        <div class="setting-toggle" id="closeAfterStashToggle"></div>
+      </div>
+      <div class="setting-item" id="newTabAfterStashItem" style="display: none;">
+        <span class="setting-label">搁置整个窗口后新建标签页以免浏览器关闭</span>
+        <div class="setting-toggle" id="newTabAfterStashToggle"></div>
+      </div>
+      <div class="setting-item">
+        <span class="setting-label">打开后移除标签页</span>
+        <div class="setting-toggle" id="removeAfterOpenToggle"></div>
+      </div>
+      <div class="setting-item">
+        <span class="setting-label">最新搁置的标签页排列在底部</span>
+        <div class="setting-toggle" id="sortOrderToggle"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "搁置标签页",
+  "version": "1.0.0",
+  "description": "搁置标签页以便稍后浏览，支持身份标签页区分和一次搁置整个窗口",
+  "icons": {
+    "48": "icons/icon-48.svg",
+    "96": "icons/icon-48.svg",
+    "128": "icons/icon-48.svg"
+  },
+  "action": {
+    "default_icon": {
+      "48": "icons/icon-48.svg",
+      "96": "icons/icon-48.svg"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Tab Set-aside"
+  },
+  "page_action": {
+    "default_icon": {
+      "48": "icons/icon-48.svg",
+      "96": "icons/icon-48.svg"
+    },
+    "default_title": "搁置此标签页"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "contextualIdentities",
+    "cookies"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "Tab-Set-aside@artlessist",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  }
+}

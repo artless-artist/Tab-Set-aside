@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" fill="url(#svg_10)" ry="3" rx="3" height="36" width="36.375" y="5.875" x="0.70837" opacity="0.9"/>
+  <rect id="svg_9" fill="url(#svg_44)" ry="3" rx="3" height="36.1251" width="34.875" y="5.75" x="12.50003" opacity="0.8"/>
+  <rect id="svg_5" fill="url(#svg_45)" ry="3" rx="3" height="26.5" width="34.74999" y="15.31255" x="12.43754" opacity="0.3"/>
+ </g>
+ <defs>
+  <linearGradient id="svg_10" x1="1" y1="0" x2="1" y2="1">
+   <stop stop-opacity="0.99219" stop-color="#c6c6c6" offset="0"/>
+   <stop stop-color="#9b9b9b" stop-opacity="0.99609" offset="1"/>
+  </linearGradient>
+  <linearGradient y2="0" x2="1" y1="0" x1="0" id="svg_44">
+   <stop stop-opacity="0.99219" offset="0" stop-color="#dddddd"/>
+   <stop stop-opacity="0.99609" offset="1" stop-color="#7f7f7f"/>
+  </linearGradient>
+  <linearGradient y2="1" x2="0" y1="0" x1="0" id="svg_45">
+   <stop stop-opacity="0.99609" offset="0" stop-color="#ffffff"/>
+   <stop stop-opacity="0.99219" offset="1" stop-color="#9b9b9b"/>
+  </linearGradient>
+ </defs>
+</svg>
