@@ -1,0 +1,80 @@
+{
+  "extensionName": {
+    "message": "Tab Set-aside",
+    "description": "扩展名称"
+  },
+  "extensionDescription": {
+    "message": "Set aside tabs for later browsing. Supports container tabs and setting aside entire windows at once.",
+    "description": "扩展描述"
+  },
+  "pageActionTitle": {
+    "message": "Set aside this tab",
+    "description": "地址栏按钮提示"
+  },
+  "stashWorkspaceBtn": {
+    "message": "Set aside all tabs in current window",
+    "description": "搁置当前窗口按钮"
+  },
+  "clearAllBtn": {
+    "message": "Delete all set-aside tabs",
+    "description": "清空所有按钮"
+  },
+  "settingsBtn": {
+    "message": "Settings",
+    "description": "设置按钮"
+  },
+  "emptyState": {
+    "message": "No set-aside tabs",
+    "description": "空状态提示"
+  },
+  "emptyStateHint": {
+    "message": "Click the address bar icon to set aside the current tab",
+    "description": "空状态提示（次要）"
+  },
+  "themeToggle": {
+    "message": "Dark mode",
+    "description": "深色模式"
+  },
+  "closeAfterStashToggle": {
+    "message": "Close tabs after setting aside",
+    "description": "搁置后关闭标签页"
+  },
+  "newTabAfterStashToggle": {
+    "message": "Create a new tab after setting aside the entire window to prevent the browser from closing",
+    "description": "搁置整个窗口后新建标签页"
+  },
+  "removeAfterOpenToggle": {
+    "message": "Remove tab after opening",
+    "description": "打开后移除标签页"
+  },
+  "sortOrderToggle": {
+    "message": "Show latest set-aside tabs at the bottom",
+    "description": "最新搁置的标签页排列在底部"
+  },
+  "workspaceBadge": {
+    "message": "Workspace",
+    "description": "工作区标签"
+  },
+  "workspaceNamePlaceholder": {
+    "message": "Enter workspace name",
+    "description": "工作区名称占位符"
+  },
+  "moreTabs": {
+    "message": "...and $COUNT$ more tabs",
+    "description": "更多标签页提示",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "deleteTooltip": {
+    "message": "Delete",
+    "description": "删除按钮提示"
+  },
+  "clearConfirmTitle": {
+    "message": "Are you sure you want to delete all set-aside tabs and workspaces? This action cannot be undone.",
+    "description": "清空确认对话框"
+  }
+}

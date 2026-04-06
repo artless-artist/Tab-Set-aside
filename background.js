@@ -18,6 +18,15 @@ function escapeHtml(text) {
         .replace(/'/g, "&#039;");
 }
 
+function getI18nData() {
+    const keys = ['extensionName', 'extensionDescription', 'pageActionTitle', 'stashWorkspaceBtn', 'clearAllBtn', 'settingsBtn', 'emptyState', 'emptyStateHint', 'themeToggle', 'closeAfterStashToggle', 'newTabAfterStashToggle', 'removeAfterOpenToggle', 'sortOrderToggle', 'workspaceBadge', 'workspaceNamePlaceholder', 'moreTabs', 'deleteTooltip', 'clearConfirmTitle'];
+    const i18n = {};
+    keys.forEach(key => {
+        i18n[key] = browser.i18n.getMessage(key);
+    });
+    return i18n;
+}
+
 // 地址栏按钮：暂存当前标签页
 browser.pageAction.onClicked.addListener(async (tab) => {
     await stashTab(tab);
@@ -203,7 +212,7 @@ async function stashWorkspace() {
 
     const workspace = {
         id: workspaceId,
-        name: `工作区 ${new Date().toLocaleTimeString()}`,
+        name: `${browser.i18n.getMessage('workspaceBadge')} ${new Date().toLocaleTimeString()}`,
         tabs: workspaceTabs,
         timestamp: Date.now()
     };
@@ -350,6 +359,9 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
             } else {
                 sendResponse({ success: false });
             }
+            return true;
+        case 'getI18n':
+            sendResponse(getI18nData());
             return true;
     }
 });

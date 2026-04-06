@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+ <g>
+  <title>Layer 1</title>
+  <rect stroke-width="4" fill="none" ry="3" rx="3" height="34" width="32" y="8" x="2" id="svg_3" stroke="#ffffff"/>
+  <rect opacity="0.6" stroke-width="4" fill="none" ry="3" rx="3" height="34" width="32" y="8" x="14" id="svg_1" stroke="#ffffff"/>
+  <rect opacity="0.9" stroke-width="4" fill="none" ry="3" rx="3" height="24" width="32" y="18" x="14" id="svg_2" stroke="#ffffff"/>
+ </g>
+
+</svg>

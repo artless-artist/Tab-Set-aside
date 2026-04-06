@@ -1,27 +1,32 @@
 {
   "manifest_version": 3,
-  "name": "搁置标签页",
-  "version": "1.0.0",
-  "description": "搁置标签页以便稍后浏览，支持身份标签页区分和一次搁置整个窗口",
+  "name": "__MSG_extensionName__",
+  "version": "1.1.0",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "zh-CN",
   "icons": {
-    "48": "icons/icon-48.svg",
-    "96": "icons/icon-48.svg",
-    "128": "icons/icon-48.svg"
+    "48": "icons/icon-48-dark.svg",
+    "96": "icons/icon-48-dark.svg",
+    "128": "icons/icon-48-dark.svg"
   },
   "action": {
     "default_icon": {
-      "48": "icons/icon-48.svg",
-      "96": "icons/icon-48.svg"
+      "48": "icons/icon-48-dark.svg",
+      "96": "icons/icon-48-dark.svg"
     },
     "default_popup": "popup.html",
-    "default_title": "Tab Set-aside"
+    "default_title": "__MSG_pageActionTitle__",
+    "theme_icons": [
+      { "light": "icons/icon-48-light.svg", "dark": "icons/icon-48-dark.svg", "size": 48 },
+      { "light": "icons/icon-48-light.svg", "dark": "icons/icon-48-dark.svg", "size": 96 }
+    ]
   },
   "page_action": {
     "default_icon": {
-      "48": "icons/icon-48.svg",
-      "96": "icons/icon-48.svg"
+      "48": "icons/icon-48-dark.svg",
+      "96": "icons/icon-48-dark.svg"
     },
-    "default_title": "搁置此标签页"
+    "default_title": "__MSG_pageActionTitle__"
   },
   "background": {
     "scripts": ["background.js"]
@@ -35,13 +40,9 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "Tab-Set-aside@artlessist",
-      "strict_min_version": "140.0",
       "data_collection_permissions": {
         "required": ["none"]
       }
-    },
-    "gecko_android": {
-      "strict_min_version": "142.0"
     }
   }
 }

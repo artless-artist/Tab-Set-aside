@@ -1,0 +1,80 @@
+{
+  "extensionName": {
+    "message": "搁置标签页",
+    "description": "扩展名称"
+  },
+  "extensionDescription": {
+    "message": "搁置标签页以便稍后浏览，支持身份标签页区分和一次搁置整个窗口",
+    "description": "扩展描述"
+  },
+  "pageActionTitle": {
+    "message": "搁置此标签页",
+    "description": "地址栏按钮提示"
+  },
+  "stashWorkspaceBtn": {
+    "message": "搁置当前窗口的所有标签页",
+    "description": "搁置当前窗口按钮"
+  },
+  "clearAllBtn": {
+    "message": "删除所有暂存的标签页",
+    "description": "清空所有按钮"
+  },
+  "settingsBtn": {
+    "message": "设置",
+    "description": "设置按钮"
+  },
+  "emptyState": {
+    "message": "暂无搁置的标签页",
+    "description": "空状态提示"
+  },
+  "emptyStateHint": {
+    "message": "点击地址栏图标搁置当前标签页",
+    "description": "空状态提示（次要）"
+  },
+  "themeToggle": {
+    "message": "深色模式",
+    "description": "深色模式"
+  },
+  "closeAfterStashToggle": {
+    "message": "搁置后关闭标签页",
+    "description": "搁置后关闭标签页"
+  },
+  "newTabAfterStashToggle": {
+    "message": "搁置整个窗口后新建标签页以免浏览器关闭",
+    "description": "搁置整个窗口后新建标签页"
+  },
+  "removeAfterOpenToggle": {
+    "message": "打开后移除标签页",
+    "description": "打开后移除标签页"
+  },
+  "sortOrderToggle": {
+    "message": "最新搁置的标签页排列在底部",
+    "description": "最新搁置的标签页排列在底部"
+  },
+  "workspaceBadge": {
+    "message": "工作区",
+    "description": "工作区标签"
+  },
+  "workspaceNamePlaceholder": {
+    "message": "输入工作区名称",
+    "description": "工作区名称占位符"
+  },
+  "moreTabs": {
+    "message": "...还有 $COUNT$ 个标签页",
+    "description": "更多标签页提示",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "deleteTooltip": {
+    "message": "删除",
+    "description": "删除按钮提示"
+  },
+  "clearConfirmTitle": {
+    "message": "确定要清空所有标签页和工作区吗？此操作不可撤销",
+    "description": "清空确认对话框"
+  }
+}

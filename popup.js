@@ -6,6 +6,19 @@ let settings = { closeAfterStash: false, newTabAfterStash: true, removeAfterOpen
 let storedData = { tabs: [], workspaces: [] };
 let isDataLoaded = false;
 let isSettingsVisible = false;
+let i18n = {};
+
+async function loadI18n() {
+    i18n = await browser.runtime.sendMessage({ action: 'getI18n' });
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (i18n[key]) el.textContent = i18n[key];
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+        const key = el.dataset.i18nTitle;
+        if (i18n[key]) el.title = i18n[key];
+    });
+}
 
 // 核心防御：增加超时保护，防止后台未响应时popup卡死产生1像素幽灵窗口
 async function safeSendMessage(message, timeout = 2000) {
@@ -115,7 +128,7 @@ function createTabElement(tab, index) {
   const closeBtn = document.createElement('button');
   closeBtn.className = 'item-close';
   closeBtn.dataset.id = tab.id;
-  closeBtn.title = '删除';
+  closeBtn.title = i18n.deleteTooltip || '删除';
   
   main.appendChild(faviconDiv);
   main.appendChild(info);
@@ -144,14 +157,14 @@ function createWorkspaceElement(workspace, color, index) {
   const badge = document.createElement('span');
   badge.className = 'workspace-badge';
   badge.style.background = color;
-  badge.textContent = '工作区';
+  badge.textContent = i18n.workspaceBadge || '工作区';
   
   const nameInput = document.createElement('input');
   nameInput.type = 'text';
   nameInput.className = 'workspace-name-input';
   nameInput.value = workspace.name || '';
   nameInput.dataset.id = workspace.id;
-  nameInput.placeholder = '输入工作区名称';
+  nameInput.placeholder = i18n.workspaceNamePlaceholder || '输入工作区名称';
   
   const closeBtn = document.createElement('button');
   closeBtn.className = 'item-close';
@@ -230,7 +243,7 @@ function createWorkspaceElement(workspace, color, index) {
     if (workspace.tabs.length > 5) {
       const moreDiv = document.createElement('div');
       moreDiv.className = 'more-tabs';
-      moreDiv.textContent = `...还有 ${workspace.tabs.length - 5} 个标签页`;
+      moreDiv.textContent = `...${i18n.moreTabs?.replace('$COUNT$', workspace.tabs.length - 5) || '...还有 ' + (workspace.tabs.length - 5) + ' 个标签页'}`;
       tabsDiv.appendChild(moreDiv);
     }
   }
@@ -439,7 +452,7 @@ async function handleStashWorkspace() {
 
 async function handleClearAll() {
   if (!isDataLoaded) return;
-  if (confirm('确定要清空所有标签页和工作区吗？此操作不可撤销。')) {
+  if (confirm(i18n.clearConfirmTitle || '确定要清空所有标签页和工作区吗？此操作不可撤销。')) {
     try {
       await safeSendMessage({ action: 'clearAll' });
       await loadData();
@@ -463,6 +476,7 @@ async function updateSortOrder(order) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  await loadI18n();
   await Promise.all([loadSettings(), loadData()]);
   
   document.getElementById('stashWorkspaceBtn').addEventListener('click', handleStashWorkspace);
