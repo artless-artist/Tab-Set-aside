@@ -239,13 +239,6 @@ function createWorkspaceElement(workspace, color, index) {
       
       tabsDiv.appendChild(tabEl);
     });
-    
-    if (workspace.tabs.length > 5) {
-      const moreDiv = document.createElement('div');
-      moreDiv.className = 'more-tabs';
-      moreDiv.textContent = `...${i18n.moreTabs?.replace('$COUNT$', workspace.tabs.length - 5) || '...还有 ' + (workspace.tabs.length - 5) + ' 个标签页'}`;
-      tabsDiv.appendChild(moreDiv);
-    }
   }
   item.appendChild(tabsDiv);
   

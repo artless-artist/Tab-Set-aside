@@ -76,7 +76,7 @@ async function getContainerInfo(cookieStoreId) {
 }
 
 async function stashTab(tab) {
-    if (!tab.url || tab.url.startsWith('about:') || tab.url.startsWith('chrome:') || tab.url.startsWith('moz-extension:')) {
+    if (!tab.url || tab.url.startsWith('about:') || tab.url.startsWith('chrome:') || tab.url.startsWith('moz-extension:') || tab.url.startsWith('file://')) {
         return null;
     }
 
@@ -180,7 +180,7 @@ async function stashWorkspace() {
     const workspaceTabs = [];
 
     for (const tab of tabs) {
-        if (!tab.url || tab.url.startsWith('about:') || tab.url.startsWith('chrome:') || tab.url.startsWith('moz-extension:')) {
+        if (!tab.url || tab.url.startsWith('about:') || tab.url.startsWith('chrome:') || tab.url.startsWith('moz-extension:') || tab.url.startsWith('file://')) {
             continue;
         }
         const containerInfo = await getContainerInfo(tab.cookieStoreId);
@@ -266,7 +266,11 @@ async function openWorkspace(workspaceId, removeFromList = false) {
     const settings = await getSettings();
 
     for (const tabData of workspace.tabs) {
-        await openTab(tabData, false);
+        try {
+            await openTab(tabData, false);
+        } catch (e) {
+            console.warn("打开标签页失败:", tabData.url, e.message);
+        }
     }
 
     if (removeFromList || settings.removeAfterOpen) {
